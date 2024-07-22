@@ -12,7 +12,6 @@ pipeline {
         }
         stage('Application build') {
             steps {
-                sh 'nvm install node'
                 sh 'npm install'
                 sh 'npm run build'
             }
