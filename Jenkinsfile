@@ -12,10 +12,13 @@ pipeline {
         }
         stage('Application build') {
             steps {
-                sh 'npm install'
-                sh 'npm run build'
+                nodejs(nodeJSInstallationName: 'NodeJS') {
+                    sh 'npm install'
+                    sh 'npm run build'
+                }
             }
         }
+        
 
         stage('Docker image build') {
             steps {
